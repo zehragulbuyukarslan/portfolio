@@ -36,13 +36,16 @@ body{
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    height: 50px;
 }
 
 .motto h2{
     display: inline-block;
-      color: black;
-      padding-left: 100%;  /* Başlangıçta ekran dışında */
-      animation: scroll 11s linear infinite;
+    color: black;
+    padding-left: 100%;  /* Başlangıçta ekran dışında */
+    animation: scroll 11s linear infinite;
 }
 
 @keyframes scroll {
@@ -61,6 +64,10 @@ body{
     background-color: white;
     border-radius: 150px;
     padding-bottom: 25px;
+  }
+
+  .about p{
+    padding: 20px;
   }
 
   .services{
