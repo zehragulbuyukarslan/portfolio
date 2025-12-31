@@ -6,7 +6,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #bbbbbb;
+    background-color: white;
     padding: 10px 20px;
     border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -14,7 +14,7 @@ header{
 
 button{
     margin: 25px;
-    background-color: #222;
+    background-color: #7a2660;
     color: white;
     border: none;
     padding: 10px 15px;
