@@ -35,7 +35,7 @@
             </strong></i></p>
         </about>
 
-        <services class="services">
+        <services class="services" id="services">
             <h1>My Services</h1>
             <ul>
                 <li>- Web Development</li>
@@ -45,21 +45,31 @@
             </ul>
         </services>
 
-        <projects class="projects">
+        <projects class="projects" id="projects">
             <h1>My Projects</h1>
-            <div class="project-list">
-                <div class="project-item">
+            <div class="projects-slideshow" id="projects-slideshow">
+                <div class="slide">
+                    <img src="project1.jpg" style="width:100%">
                     <h3>Project 1: </h3>
                     <p> Description of Project 1.</p>
                 </div>
-                <div class="project-item">
+
+                <div class="slide">
+                    <img src="project2.jpg" style="width:100%">
                     <h3>Project 2: </h3>
                     <p> Description of Project 2.</p>
                 </div>
-                <div class="project-item">
+
+                <div class="slide">
+                    <img src="project3.jpg" style="width:100%">
                     <h3>Project 3: </h3>
                     <p> Description of Project 3.</p>
                 </div>
+
+                <button class="prev" aria-label="Previous"></button>
+                <button class="next" aria-label="Next"></button>
+
+                <div class="dots"></div>
             </div>
         </projects>
     </div>
