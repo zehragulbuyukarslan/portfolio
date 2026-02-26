@@ -1,23 +1,26 @@
 
 header{
-    width: 50%;
-    margin-top: 5px;
-    height: 55px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff4fa;
-    padding: 10px 20px;
-    border-radius: 35px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button{
+.nav-menu{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    height: 55px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff4fa;
+}
+
+.btn{
     margin: 25px;
     background-color: #7a2660;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 15px 15px;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
