@@ -11,31 +11,33 @@
 
 <body>
     <header class="header">
-        <button class="btn" href="#profile">Home</button>
-        <button class="btn" href="#about">About</button>
-        <button class="btn" href="#services">Services</button>
-        <button class="btn" href="#projects">Projects</button>
-        <button class="btn" href="#footer">Contact</button>
+        <nav class="nav-menu">
+            <button class="btn" href="#profile">Home</button>
+            <button class="btn" href="#about">About</button>
+            <button class="btn" href="#services">Services</button>
+            <button class="btn" href="#projects">Projects</button>
+            <button class="btn" href="#footer">Contact</button>
+        </nav>
     </header>
+    
+    <main class="main">
 
-    <div class ="profile">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-image">
-        <h1 id="isim">Zehra Gül<br/>Büyükarslan</h1>
-    </div>
+        <section class="hero">
+            <img src="profile.jpg" alt="Profile Picture" class="profile">
+            <p>
+                <h1>Zehra Gül<br/>Büyükarslan</h1>
+                <h2>Contribute to the solutions of people’s life problems through software</h2>
+            </p>
+        </section>
 
-    <div class="motto">
-        <h2>Contribute to the solutions of people’s life problems through software</h2>
-    </div>
-
-    <div class="baloons">
-        <about class="about" id="about">
+        <section class="about" id="about">
             <h1>About Me</h1>
             <p><i><strong>I'm a computer engineering student at Karabuk University. <br/> I am passionate about software development and contributing to innovative projects.
             <br/>I want my projects to make a positive impact on people's lives. I am constantly seeking opportunities to learn and grow in the field of technology.
             </strong></i></p>
-        </about>
+        </section>
 
-        <services class="services" id="services">
+        <section class="services" id="services">
             <h1>My Services</h1>
             <ul>
                 <li>- Web Development</li>
@@ -43,9 +45,9 @@
                 <li>- UI/UX Design</li>
                 <li>- Software Consulting</li>
             </ul>
-        </services>
+        </section>
 
-        <projects class="projects" id="projects">
+        <section class="projects" id="projects">
             <h1>My Projects</h1>
             <div class="projects-slideshow" id="projects-slideshow">
                 <div class="slide">
@@ -71,9 +73,10 @@
 
                 <div class="dots"></div>
             </div>
-        </projects>
-    </div>
+        </section>
     
+    </main>
+
     <footer class="footer">
         <div class="footer-section" id="contact">
             <b>CONTACT</b>
