@@ -4,7 +4,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 0;
     background-color: #fff;
 }
@@ -22,7 +21,7 @@ body{
   padding-top: 100px;
 }
 
-.hero .profile {
+.hero .profile-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
