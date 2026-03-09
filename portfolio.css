@@ -1,37 +1,26 @@
-
-
 body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin: 0;
     background-color: #fff;
-}
-
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-  
-.hero {
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 100px;
-}
-
-.hero .profile-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #7a2660;
 }
 
 section {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+  
+.hero {
+  align-items: center;
+  gap: 20px;
+}
+
+.hero .profile-img {
+  margin: 100px 0 20px 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #611c4b;
 }
 
   .about{
@@ -46,6 +35,7 @@ section {
 
   .about p{
     padding: 20px;
+    
   }
 
   .services{
@@ -80,3 +70,8 @@ section {
     display: flex;
     align-items: center;
   }
+
+  @keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
