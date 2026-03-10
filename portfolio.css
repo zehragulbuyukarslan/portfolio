@@ -3,24 +3,39 @@ body{
     background-color: #fff;
 }
 
+
 section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
   
-.hero {
+#hero {
   align-items: center;
   gap: 20px;
+  background-image: url(giris.svg);
+  background-repeat: no-repeat;
+  background-color: #611c4b;
 }
 
-.hero .profile-img {
+#hero .profile-img {
   margin: 100px 0 20px 0;
   width: 250px;
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #611c4b;
+}
+
+#hero h1 {
+  font-size: 44px;
+  font-family: 'Nixie One', system-ui;
+}
+
+#hero h2 {
+  font-size: 28px;
+  font-family: 'Nixie One', system-ui;
 }
 
   .about{
@@ -74,4 +89,10 @@ section {
   @keyframes scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
+}
+
+.nixie-one-regular {
+  font-family: "Nixie One", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
