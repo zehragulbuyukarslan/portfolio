@@ -1,9 +1,12 @@
 
 header{
-    display: block;
-    position: fixed;
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
     min-height: 55px;
+    background-color: #fff4fa;
+    z-index: 1000;
 }
 
 .menu{
@@ -12,7 +15,7 @@ header{
     justify-content: center;
     gap: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff4fa;
+    
 }
 
 .menu ul{
