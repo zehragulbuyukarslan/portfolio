@@ -1,6 +1,7 @@
 body{
     margin: 0;
     background-color: #470f35;
+    overflow-x: hidden;
 }
 
 
@@ -12,7 +13,6 @@ section {
 }
   
 #hero {
-  gap: 20px;
   height: 648px;
 }
 
@@ -64,34 +64,55 @@ section {
   transform: translateX(800px);
   }
 
-  .about h1{
-    font-size: 50px;
-    color: #fff4fa;
-    font-family: 'Nixie One', system-ui;
-  }
-  .about p{
-    color: #fff4fa;
-    padding: 20px;
-    font-family: Nixie One, system-ui;
-  }
+.about h1{
+  font-size: 50px;
+  color: #fff4fa;
+  font-family: 'Nixie One', system-ui;
+}
 
-  .services{
+.about p{
+  color: #fff4fa;
+  padding: 20px;
+  font-family: Nixie One, system-ui;
+}
+
+.services{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services h1{
+  margin-top: 100px;
+  font-size: 50px;
+  color: #fff4fa;
+  font-family: 'Nixie One', system-ui;
+}
+
+.cards{
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.service-card{
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background-color:  #fff4fa;
+    color:#611c4b;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 75px;
-    background-color: #fff4fa;
-  }
-
-  .services li{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #222;
-    padding: 10px;
-  }
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
   .projects{
     display: flex;
