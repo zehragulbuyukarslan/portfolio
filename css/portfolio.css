@@ -48,6 +48,7 @@ section {
   transform: translateX(7.5%);
   font-size: 27px;
   color: #fff4fa;
+  word-spacing: 0.2em;
 }
 
 .motto {
@@ -97,6 +98,7 @@ section {
   font-size: 50px;
   color: #fff4fa;
   font-family: 'Nixie One', system-ui;
+  word-spacing: 0.2em;
 }
 
 .cards{
@@ -142,8 +144,7 @@ section {
 }
 
 #projects{
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   justify-content: center;
   align-items: center;
   margin-top: 75px;
@@ -155,24 +156,58 @@ section {
   font-size: 50px;
   color: #fff4fa;
   font-family: 'Nixie One', system-ui;
+  word-spacing: 0.2em;
 }
 
+/*
 .projects-slideshow {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 20px;
+  gap: 30px;
   padding: 20px;
 }
 
 .project-item {
-  flex: 0 0 auto;
+  
   width: 300px;
-  height: 200px;
+  height: 400px;
   background-color: #fff4fa;
   border-radius: 10px;
   padding: 20px;
   scroll-snap-align: start;
+} 
+*/
+
+.projects-slideshow {
+  display: grid;
+  /* Her bir kart en az 250px olsun, sığdığı sürece yan yana dizilsin */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 30px;
+  padding: 20px;
+  /* Kaydırma özelliklerini siliyoruz */
+  overflow-x: visible; 
+}
+
+.project-item {
+  width: 100%; /* Grid hücresine tam yayılması için */
+  height: auto; /* İçerik kadar uzasın */
+  min-height: 400px;
+  background-color: #fff4fa;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 @keyframes scroll {
