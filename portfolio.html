@@ -3,121 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Zehra Gul</title>
+    <title>Zehra Gül Büyükarslan</title>
     <script src="https://kit.fontawesome.com/e26118b27d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Nixie+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
-
+ 
 <body>
-
-    <header class="header">
+ 
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+ 
+    <header class="header" id="mainHeader">
         <nav class="menu">
+            <div class="logo">ZG</div>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="#hero" data-text="Home">Home</a></li>
+                <li><a href="#services" data-text="Services">Services</a></li>
+                <li><a href="#projects" data-text="Projects">Projects</a></li>
+                <li><a href="#footer" data-text="Contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <main class="main">
-
-        <section id="hero" class="hero">
-            <article id="hero-profile">
-                <img src="img/giris.svg" alt="Hero Image" class="hero-back-img">
-                <img src="img/profile.jpg" alt="Profile Picture" class="profile-img">
-                <div class="hero-profile-text">
-                    <h1 class="name">Zehra Gül BÜYÜKARSLAN</h1>
-                    <h2 class="motto">Contribute to Solving Real-World Problems Through Software</h2>
-                </div>
-            </article>
-
-            <article id="hero-about" class="about">
-                <h1>Hi!</h1>
-                <p>
-                    <strong>I'm a computer engineering student at Karabuk University who is passionate about software development and contributing to innovative projects. I want my projects to make a positive impact on people's lives. I am constantly seeking opportunities to learn and grow in the field of technology.</strong>
-                </p>
-            </article>
-            
-        </section>
-
-        <section id="services" class="services">
-            <div class="line"></div>
-            <h1>My Services</h1>
-            
-            <article class="cards">
-                <div class="service-card">
-                    <h2>Web Development</h2>
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <div class="service-card">
-                    <h2>Artificial Intelligence</h2>
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-                <div class="service-card">
-                    <h2>Video Editing</h2>
-                    <i class="fa-solid fa-file-video"></i>
-                </div>
-                <div class="service-card">
-                    <h2>Graphic Design</h2>
-                    <i class="fa-solid fa-palette"></i>
-                </div>
-            </article>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="line"></div>
-            <h1>My Projects & My Experiences</h1>
-            <div class="projects-slideshow" id="projects-slideshow">
-                <article class="project-item">
-                    <img src="img/del-mails.png" >
-                    <h3>Autonomous Email Filtering System</h3>
-                    <p>I wrote a Python program that automatically deletes unwanted emails from specific organizations or with specific keywords.I made this system fully autonomous using GitHub Actions and YAML configuration. I used the IMAP protocol. Now the system runs automatically every morning at 10:00 AM Turkish time, scanning the specified organizations and keywords and destroying the emails.</p>
+ 
+        <section id="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient-orb orb-1"></div>
+                <div class="hero-gradient-orb orb-2"></div>
+                <div class="hero-gradient-orb orb-3"></div>
+            </div>
+ 
+            <div class="hero-inner">
+                <article id="hero-profile">
+                    <div class="profile-img-wrapper">
+                        <div class="profile-ring"></div>
+                        <img src="img/profile.jpg" alt="Profile Picture" class="profile-img">
+                    </div>
+                    <div class="hero-profile-text">
+                        <p class="hero-label">Software Developer & Designer</p>
+                        <h1 class="name">Zehra Gül<br><span>Büyükarslan</span></h1>
+                        <h2 class="motto">Contribute to Solving Real-World Problems Through Software</h2>
+                        <div class="hero-cta">
+                            <a href="#projects" class="btn-primary">View Work</a>
+                            <a href="#footer" class="btn-secondary">Get in Touch</a>
+                        </div>
+                    </div>
                 </article>
-
-                <article class="project-item">
-                    <img src="img/nesne-tespit-takip-sema.png" >
-                    <h3>Autonomous Underwater Vehicle Development</h3>
-                    <p>I have contributed to the development of the AUV of DDD organization. My work focused on motion control, mission automation, and computer vision. I develop software in Python and C++ using Pixhawk, PyMAVLink, and ROS. I implement PID-based control algorithms and use OpenCV for underwater object detection and visual processing. I also worked on integrating embedded systems and sensors to enable fully autonomous missions.</p>
-                </article>
-
-                <article class="project-item">
-                    <img src="img/chatbot.jpg">
-                    <h3>Chatbot Development</h3>
-                    <p>Volunteered at the IT Department of my university. Collected and organized datasets for an AI-powered chatbot project designed for the university’s official website. Contributed to data cleaning and classification processes. Also developed user scenarios and sample dialogues to enhance the chatbot’s accuracy in responding to frequently asked questions.</p>
+ 
+                <article id="hero-about" class="about">
+                    <div class="about-tag">About Me</div>
+                    <h2>Hi, I'm Zehra!</h2>
+                    <p>
+                        A computer engineering student at Karabük University passionate about software development and innovative projects. I want my work to make a positive impact on people's lives — and I'm constantly seeking opportunities to learn and grow in the field of technology.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num">3+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">4</span>
+                            <span class="stat-label">Services</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">∞</span>
+                            <span class="stat-label">Curiosity</span>
+                        </div>
+                    </div>
                 </article>
             </div>
-            <div class="dots">
-                <button class="prev" aria-label="Previous"></button>
-                <button class="next" aria-label="Next"></button>
+ 
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+ 
+        <section id="services">
+            <div class="section-header">
+                <span class="section-tag">What I Do</span>
+                <h1>My Services</h1>
+            </div>
+            
+            <article class="cards">
+                <div class="service-card" style="--card-delay: 0s">
+                    <div class="card-icon-wrap">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h2>Web Development</h2>
+                    <p>Building modern, responsive websites and web applications from scratch.</p>
+                    <div class="card-number">01</div>
+                </div>
+                <div class="service-card" style="--card-delay: 0.1s">
+                    <div class="card-icon-wrap">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h2>Artificial Intelligence</h2>
+                    <p>Developing AI-powered solutions and integrating intelligent features.</p>
+                    <div class="card-number">02</div>
+                </div>
+                <div class="service-card" style="--card-delay: 0.2s">
+                    <div class="card-icon-wrap">
+                        <i class="fa-solid fa-file-video"></i>
+                    </div>
+                    <h2>Video Editing</h2>
+                    <p>Creating polished, engaging video content for various platforms.</p>
+                    <div class="card-number">03</div>
+                </div>
+                <div class="service-card" style="--card-delay: 0.3s">
+                    <div class="card-icon-wrap">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h2>Graphic Design</h2>
+                    <p>Crafting visual identities and designs that communicate effectively.</p>
+                    <div class="card-number">04</div>
+                </div>
+            </article>
+        </section>
+ 
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h1>Projects &amp; Experience</h1>
+            </div>
+ 
+            <div class="projects-grid" id="projects-slideshow">
+                <article class="project-item" style="--item-delay: 0s">
+                    <div class="project-img-wrap">
+                        <img src="img/del-mails.png" alt="Email Filtering System">
+                        <div class="project-overlay">
+                            <span class="project-tag">Python · GitHub Actions</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Autonomous Email Filtering System</h3>
+                        <p>A Python program that automatically deletes unwanted emails using IMAP protocol. Fully autonomous via GitHub Actions and YAML — runs every morning at 10:00 AM Turkish time.</p>
+                    </div>
+                </article>
+ 
+                <article class="project-item" style="--item-delay: 0.15s">
+                    <div class="project-img-wrap">
+                        <img src="img/nesne-tespit-takip-sema.png" alt="AUV Development">
+                        <div class="project-overlay">
+                            <span class="project-tag">Python · C++ · ROS · OpenCV</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Autonomous Underwater Vehicle</h3>
+                        <p>Contributed to DDD organization's AUV — motion control, mission automation, and computer vision using Pixhawk, PyMAVLink, ROS, and PID-based control algorithms.</p>
+                    </div>
+                </article>
+ 
+                <article class="project-item" style="--item-delay: 0.3s">
+                    <div class="project-img-wrap">
+                        <img src="img/chatbot.jpg" alt="Chatbot Development">
+                        <div class="project-overlay">
+                            <span class="project-tag">AI · NLP · Data Collection</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>University Chatbot</h3>
+                        <p>Volunteered at the IT Department to develop an AI-powered chatbot for the university website — collected datasets, handled data cleaning, and designed user scenarios.</p>
+                    </div>
+                </article>
             </div>
         </section>
     
     </main>
-
-    <footer id="footer" class="footer">
-        <div class="footer-section" id="contact">
-            <b>CONTACT</b>
-            <a>E-mail: zgbarslan@gmail.com</a>
-            <a>Address: University of Karabuk Karabuk/Türkiye</a>
+ 
+     <footer class="footer" id="footer">
+      <div class="footer-container">
+        <div class="footer-top-text">
+            <span class="footer-eyebrow">Let's work together</span>
+            <h2 class="footer-heading">Get In Touch</h2>
         </div>
-
-        <div class="footer-section" id="connect">
-            <b>CONNECT</b>
-            <a>GitHub: Here</a>
-            <a>LinkedIn: Here</a>
-            <a>Medium: Here</a>
-            <a>Instagram: zehragul.studio</a>
-
+ 
+        <div class="footer-content">
+          <div class="footer-section contact-section">
+            <h3 class="footer-title">Contact</h3>
+            <div class="contact-info">
+              <div class="info-item">
+                <span class="label">Email</span>
+                <a href="mailto:zgbarslan@gmail.com">zgbarslan@gmail.com</a>
+              </div>
+              <div class="info-item">
+                <span class="label">Location</span>
+                <p>İstanbul, Turkey</p>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="footer-section connect-section">
+            <h3 class="footer-title">Connect</h3>
+            <div class="social-links">
+              <a href="https://github.com/zehragulbuyukarslan" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/zehragulbuyukarslan/" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://medium.com/@zehragulbuyukarslan" class="social-link" aria-label="Medium">
+                <i class="fab fa-medium"></i>
+                <span>Medium</span>
+              </a>
+              <a href="https://www.instagram.com/zehragul.studio/" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
         </div>
+ 
+        <div class="footer-divider"></div>
+ 
+        <div class="footer-bottom">
+          <p>&copy; 2024 Zehra Gül Büyükarslan. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-
+ 
     <script src="portfolio.js"></script>
 </body>
 </html>
+ 

@@ -1,93 +1,112 @@
 
-  
-document.getElementById("about-button").addEventListener("click", function(e) {
-    e.preventDefault(); 
-    document.querySelector(".about").scrollIntoView({ 
-      behavior: "smooth" 
-    });
-});
-
-document.getElementById("services-button").addEventListener("click", function(e) {
-    e.preventDefault(); 
-    document.querySelector(".services").scrollIntoView({ 
-      behavior: "smooth" 
-    });
-});
-
-document.getElementById("projects-button").addEventListener("click", function(e) {
-    e.preventDefault(); 
-    document.querySelector(".projects").scrollIntoView({ 
-      behavior: "smooth" 
-    });
-});
-
-document.getElementById("contact-button").addEventListener("click", function(e) {
-    e.preventDefault(); 
-    document.querySelector(".footer").scrollIntoView({ 
-      behavior: "smooth" 
-    });
-});
-
-class Slideshow {
-  constructor(root, {interval = 4000} = {}) {
-    this.root = typeof root === 'string' ? document.querySelector(root) : root;
-    this.slides = Array.from(this.root.querySelectorAll('.slide'));
-    this.index = this.slides.findIndex(s => s.classList.contains('active')) || 0;
-    this.interval = interval;
-    this.timer = null;
-    this.nextBtn = this.root.querySelector('.next');
-    this.prevBtn = this.root.querySelector('.prev');
-    this.dotsContainer = this.root.querySelector('.dots');
-    this._buildDots();
-    this._bindEvents();
-    this.show(this.index);
-    this.start();
-  }
-
-  _buildDots() {
-    this.dotsContainer.innerHTML = '';
-    this.dots = this.slides.map((_, i) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.addEventListener('click', () => this.show(i));
-      this.dotsContainer.appendChild(btn);
-      return btn;
-    });
-  }
-
-  _bindEvents() {
-    if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
-    if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
-    this.root.addEventListener('mouseenter', () => this.stop());
-    this.root.addEventListener('mouseleave', () => this.start());
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') this.next();
-      if (e.key === 'ArrowLeft') this.prev();
-    });
-  }
-
-  show(i) {
-    this.slides.forEach((s, idx) => {
-      s.classList.toggle('active', idx === i);
-      if (this.dots && this.dots[idx]) this.dots[idx].classList.toggle('active', idx === i);
-    });
-    this.index = (i + this.slides.length) % this.slides.length;
-  }
-
-  next() { this.show((this.index + 1) % this.slides.length); }
-  prev() { this.show((this.index - 1 + this.slides.length) % this.slides.length); }
-
-  start() {
-    this.stop();
-    this.timer = setInterval(() => this.next(), this.interval);
-  }
-
-  stop() {
-    if (this.timer) { clearInterval(this.timer); this.timer = null; }
-  }
-}
-
-// Başlatma (sayfa sonuna veya DOMContentLoaded içinde çalıştırın)
+/* =============================================
+   PORTFOLIO.JS — Zehra Gül Büyükarslan
+   ============================================= */
+ 
 document.addEventListener('DOMContentLoaded', () => {
-  new Slideshow('#slideshow', { interval: 3500 });
+ 
+  // ── Custom Cursor ──────────────────────────
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+ 
+  if (dot && ring) {
+    let mouseX = 0, mouseY = 0;
+    let ringX  = 0, ringY  = 0;
+ 
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top  = mouseY + 'px';
+    });
+ 
+    // Smooth ring follow
+    const animateRing = () => {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.left = ringX + 'px';
+      ring.style.top  = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    };
+    animateRing();
+ 
+    // Hover effect on interactive elements
+    const interactives = document.querySelectorAll('a, button, .service-card, .project-item');
+    interactives.forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+    });
+  }
+ 
+  // ── Sticky Header ─────────────────────────
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    const handleScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+ 
+  // ── Active nav link on scroll ──────────────
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const navLinks  = document.querySelectorAll('.menu a');
+ 
+  const observerOptions = {
+    rootMargin: '-40% 0px -50% 0px',
+    threshold: 0
+  };
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, observerOptions);
+ 
+  sections.forEach(s => sectionObserver.observe(s));
+ 
+  // ── Scroll-reveal for sections ─────────────
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+ 
+  document.querySelectorAll('.service-card, .project-item, .section-header').forEach(el => {
+    el.classList.add('will-reveal');
+    revealObserver.observe(el);
+  });
+ 
+  // ── Smooth scroll for nav links ────────────
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+ 
+  // ── Parallax orbs on mouse move ────────────
+  const orbs = document.querySelectorAll('.hero-gradient-orb');
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth  - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    orbs.forEach((orb, i) => {
+      const speed = (i + 1) * 8;
+      orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+    });
+  });
+ 
 });

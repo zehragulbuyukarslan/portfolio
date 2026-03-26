@@ -1,43 +1,98 @@
 
-header{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 55px;
-    background-color: #fff4fa;
-    z-index: 1000;
-}
 
-.menu{
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-}
+Copy
 
-.menu ul{
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    gap: 70px;
+/* ── HEADER ── */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
 }
-
-.menu a{
-    display: block;
-    text-decoration: none;
-    color: #333;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 999px;
+ 
+header.scrolled {
+  background: rgba(45, 10, 31, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255, 209, 232, 0.08);
 }
-
-.menu a:hover{
-    background-color: #777;
-    color: #000;
+ 
+.menu {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 60px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffd1e8;
+  letter-spacing: 2px;
+  cursor: none;
+}
+ 
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+ 
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: rgba(255, 244, 250, 0.75);
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: color 0.3s, background 0.3s;
+  position: relative;
+  cursor: none;
+}
+ 
+.menu a:hover {
+  color: #fff4fa;
+  background: rgba(255, 209, 232, 0.1);
+}
+ 
+.menu a.active {
+  color: #ffd1e8;
+}
+ 
+@media (max-width: 768px) {
+  .menu {
+    padding: 0 24px;
+  }
+  .menu ul {
+    gap: 2px;
+  }
+  .menu a {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .menu ul {
+    gap: 0;
+  }
+  .menu a {
+    font-size: 11px;
+    padding: 6px 8px;
+    letter-spacing: 0;
+  }
 }
