@@ -21,11 +21,12 @@
  
     <header class="header" id="mainHeader">
         <nav class="menu">
-            <div class="logo">ZG</div>
+            <a href="index.html" class="logo" aria-label="Home">ZG</a>
             <ul>
                 <li><a href="#hero" data-text="Home">Home</a></li>
                 <li><a href="#services" data-text="Services">Services</a></li>
                 <li><a href="#projects" data-text="Projects">Projects</a></li>
+                <li><a href="#writing" data-text="Writing">Writing</a></li>
                 <li><a href="#footer" data-text="Contact">Contact</a></li>
             </ul>
         </nav>
@@ -65,7 +66,7 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat">
-                            <span class="stat-num">3+</span>
+                            <span class="stat-num">6+</span>
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat">
@@ -129,12 +130,20 @@
         </section>
  
         <section id="projects" class="projects">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h1>Projects &amp; Experience</h1>
+            <div class="section-header section-header--projects">
+                <div class="section-header-text">
+                    <span class="section-tag">Portfolio</span>
+                    <h1>Projects &amp; Experience</h1>
+                </div>
+                <a href="projects.html" class="btn-view-all">View all</a>
             </div>
  
-            <div class="projects-grid" id="projects-slideshow">
+            <div class="projects-carousel" id="projects-carousel">
+                <button type="button" class="projects-carousel-btn projects-carousel-btn--prev" id="projects-carousel-prev" aria-label="Previous project">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="projects-carousel-viewport" id="projects-carousel-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Projects and experience">
+                    <div class="projects-carousel-track" id="projects-carousel-track">
                 <article class="project-item" style="--item-delay: 0s">
                     <div class="project-img-wrap">
                         <img src="img/del-mails.png" alt="Email Filtering System">
@@ -170,10 +179,112 @@
                     </div>
                     <div class="project-content">
                         <h3>University Chatbot</h3>
-                        <p>Volunteered at the IT Department to develop an AI-powered chatbot for the university website — collected datasets, handled data cleaning, and designed user scenarios.</p>
+                        <p>Volunteered at the IT Department to develop an AI-powered chatbot for the university website — collected datasets, handled data cleaning, and designed user scenarios. Developing RAG integration to keep answers aligned with up-to-date information.</p>
                     </div>
                 </article>
+
+                <article class="project-item" style="--item-delay: 0.45s">
+                    <div class="project-img-wrap project-img-wrap--placeholder" aria-hidden="true">
+                        <span class="project-placeholder-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <div class="project-overlay">
+                            <span class="project-tag">LLM · Prompt Engineering · BI</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Prompt Engineer Intern — M8D6</h3>
+                        <p>Researched, designed, and tested prompt techniques to improve large language model performance for M8D6 products. Focus on business intelligence, automation, and customer interaction — including the Smart Dispatch system for the U.S. home services sector.</p>
+                    </div>
+                </article>
+
+                <article class="project-item" style="--item-delay: 0.6s">
+                    <div class="project-img-wrap project-img-wrap--placeholder" aria-hidden="true">
+                        <span class="project-placeholder-icon"><i class="fa-solid fa-trophy"></i></span>
+                        <div class="project-overlay">
+                            <span class="project-tag">Ideathon · AI · InoGen</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sosyalfest Ideathon — 2nd Place (InoGen)</h3>
+                        <p>Helped design the InoGen platform vision: workshops and collaborations to grow young people’s creative thinking, problem-solving, and business skills. Used AI tools to produce visuals and presentation materials for the team.</p>
+                    </div>
+                </article>
+
+                <article class="project-item" style="--item-delay: 0.75s">
+                    <div class="project-img-wrap">
+                        <img src="img/arbifi.png" alt="ArbiFi dispute portal UI">
+                        <div class="project-overlay">
+                            <span class="project-tag">Next.js · TypeScript · Solana · Prisma</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>ArbiFi — AI Dispute Resolution on Solana</h3>
+                        <p>For freelance work, DAOs, and digital transactions, dispute resolution is often slow and depends on central authority. ArbiFi lets both parties present evidence; an AI analyzes the case and produces a clear, human-readable decision. Architecture secures final outcomes on-chain on Solana for transparency and trustless execution. Stack: Next.js and Tailwind CSS (frontend), TypeScript and Next.js API Routes (backend), Prisma and SQL (database).</p>
+                    </div>
+                </article>
+                    </div>
+                </div>
+                <button type="button" class="projects-carousel-btn projects-carousel-btn--next" id="projects-carousel-next" aria-label="Next project">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
+            <p class="projects-carousel-meta"><span id="projects-carousel-counter">1 / 6</span></p>
+        </section>
+
+        <section id="writing" class="writing">
+            <div class="section-header">
+                <span class="section-tag">Medium</span>
+                <h1>Writing</h1>
+            </div>
+
+            <div class="articles-grid">
+                <a href="https://medium.com/@zehragulbuyukarslan/prompt-m%C3%BChendisli%C4%9Fi-2-4a8fa941fb40" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0s" aria-label="Read Prompt Mühendisliği: 2 on Medium">
+                    <div class="article-card-icon" aria-hidden="true">
+                        <i class="fab fa-medium"></i>
+                    </div>
+                    <div class="article-card-content">
+                        <h3>Prompt Mühendisliği: 2</h3>
+                        <p>İstem mühendisliği serisinin ikinci bölümü — roller ve üslup.</p>
+                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://zehragulbuyukarslan.medium.com/kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma-react-ve-di%C4%9Fer-teknikler-f74b7c815849" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.1s" aria-label="Read Karşılaştırma: ReAct ve Diğer Teknikler on Medium">
+                    <div class="article-card-icon" aria-hidden="true">
+                        <i class="fab fa-medium"></i>
+                    </div>
+                    <div class="article-card-content">
+                        <h3>Karşılaştırma: ReAct ve Diğer Teknikler</h3>
+                        <p>ReAct, CoT ve benzeri yaklaşımların karşılaştırması.</p>
+                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://zehragulbuyukarslan.medium.com/reacte-giri%C5%9F-b2597331e37f" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.2s" aria-label="Read İstem Mühendisliği: ReAct on Medium">
+                    <div class="article-card-icon" aria-hidden="true">
+                        <i class="fab fa-medium"></i>
+                    </div>
+                    <div class="article-card-content">
+                        <h3>İstem Mühendisliği: ReAct</h3>
+                        <p>ReAct’e giriş — düşünme ve eylem döngüsü.</p>
+                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://zehragulbuyukarslan.medium.com/armut-freelance-platformu-mu-teklif-%C3%BCcreti-makinesi-mi-0d3c0f93ff15" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.3s" aria-label="Read Armut yazısı on Medium">
+                    <div class="article-card-icon" aria-hidden="true">
+                        <i class="fab fa-medium"></i>
+                    </div>
+                    <div class="article-card-content">
+                        <h3>Armut: Freelance Platform mu, Ücretli Teklif Makinesi mi?</h3>
+                        <p>Platform deneyimi üzerine gözlemler.</p>
+                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <p class="writing-footer-note">
+                <a href="https://medium.com/@zehragulbuyukarslan" target="_blank" rel="noopener noreferrer">View all stories on Medium</a>
+            </p>
         </section>
     
     </main>
