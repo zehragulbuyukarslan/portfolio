@@ -36,6 +36,7 @@ header.scrolled {
   color: #ffd1e8;
   letter-spacing: 2px;
   cursor: none;
+  text-decoration: none;
 }
  
 .menu ul {
