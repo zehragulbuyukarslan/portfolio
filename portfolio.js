@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateRing();
  
     // Hover effect on interactive elements
-    const interactives = document.querySelectorAll('a, button, .service-card, .project-item, .article-card, .projects-carousel-btn, .btn-view-all');
+    const interactives = document.querySelectorAll('a, button, .service-card, .project-item, .article-card, .section-carousel-btn, .btn-view-all');
     interactives.forEach(el => {
       el.addEventListener('mouseenter', () => ring.classList.add('hover'));
       el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
@@ -124,15 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Projects carousel (home) ─────────────
-  const carouselViewport = document.getElementById('projects-carousel-viewport');
-  const carouselTrack = document.getElementById('projects-carousel-track');
-  const carouselPrev = document.getElementById('projects-carousel-prev');
-  const carouselNext = document.getElementById('projects-carousel-next');
-  const carouselCounter = document.getElementById('projects-carousel-counter');
+  // ── Horizontal carousels (projects & writing on home) ─────────────
+  const initHorizontalCarousel = (viewportId, trackId, prevId, nextId, counterId, itemSelector) => {
+    const carouselViewport = document.getElementById(viewportId);
+    const carouselTrack = document.getElementById(trackId);
+    const carouselPrev = document.getElementById(prevId);
+    const carouselNext = document.getElementById(nextId);
+    const carouselCounter = document.getElementById(counterId);
 
-  if (carouselViewport && carouselTrack && carouselPrev && carouselNext && carouselCounter) {
-    const items = carouselTrack.querySelectorAll('.project-item');
+    if (!carouselViewport || !carouselTrack || !carouselPrev || !carouselNext || !carouselCounter) return;
+
+    const items = carouselTrack.querySelectorAll(itemSelector);
+    if (!items.length) return;
+
     const GAP = 28;
 
     const visibleCount = () => carouselViewport.clientWidth >= 640 ? 2 : 1;
@@ -214,6 +218,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setSlideWidths();
     updateChrome();
-  }
+  };
+
+  initHorizontalCarousel(
+    'carousel-projects-viewport',
+    'carousel-projects-track',
+    'carousel-projects-prev',
+    'carousel-projects-next',
+    'carousel-projects-counter',
+    '.project-item'
+  );
+  initHorizontalCarousel(
+    'carousel-writing-viewport',
+    'carousel-writing-track',
+    'carousel-writing-prev',
+    'carousel-writing-next',
+    'carousel-writing-counter',
+    '.article-card'
+  );
  
 });

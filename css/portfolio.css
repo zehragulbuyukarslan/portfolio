@@ -531,14 +531,14 @@ section {
   align-self: center;
 }
 
-.projects-carousel {
+.section-carousel {
   position: relative;
   display: flex;
   align-items: stretch;
   gap: 0;
   width: 100%;
 }
-.projects-carousel-viewport {
+.section-carousel-viewport {
   flex: 1;
   min-width: 0;
   overflow-x: auto;
@@ -549,30 +549,31 @@ section {
   scrollbar-color: rgba(255, 209, 232, 0.35) transparent;
   outline: none;
 }
-.projects-carousel-viewport:focus-visible {
+.section-carousel-viewport:focus-visible {
   box-shadow: 0 0 0 2px rgba(255, 209, 232, 0.45);
   border-radius: 20px;
 }
-.projects-carousel-viewport::-webkit-scrollbar {
+.section-carousel-viewport::-webkit-scrollbar {
   height: 6px;
 }
-.projects-carousel-viewport::-webkit-scrollbar-track {
+.section-carousel-viewport::-webkit-scrollbar-track {
   background: transparent;
 }
-.projects-carousel-viewport::-webkit-scrollbar-thumb {
+.section-carousel-viewport::-webkit-scrollbar-thumb {
   background: rgba(255, 209, 232, 0.25);
   border-radius: 999px;
 }
-.projects-carousel-track {
+.section-carousel-track {
   display: flex;
   gap: 28px;
   width: max-content;
 }
-.projects-carousel .project-item {
+.section-carousel .project-item,
+.section-carousel .article-card {
   flex-shrink: 0;
   scroll-snap-align: start;
 }
-.projects-carousel-btn {
+.section-carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -591,22 +592,22 @@ section {
   cursor: none;
   transition: opacity 0.3s, background 0.3s, border-color 0.3s, color 0.3s;
 }
-.projects-carousel-btn:hover:not(:disabled) {
+.section-carousel-btn:hover:not(:disabled) {
   background: rgba(255, 209, 232, 0.12);
   border-color: rgba(255, 209, 232, 0.35);
   color: var(--text);
 }
-.projects-carousel-btn:disabled {
+.section-carousel-btn:disabled {
   opacity: 0.28;
   pointer-events: none;
 }
-.projects-carousel-btn--prev {
+.section-carousel-btn--prev {
   left: -8px;
 }
-.projects-carousel-btn--next {
+.section-carousel-btn--next {
   right: -8px;
 }
-.projects-carousel-meta {
+.section-carousel-meta {
   text-align: center;
   margin-top: 20px;
   font-family: var(--font-mono);
@@ -941,15 +942,15 @@ section {
   .section-header--projects .section-header-text h1 {
     text-align: center;
   }
-  .projects-carousel-btn {
+  .section-carousel-btn {
     width: 40px;
     height: 40px;
     font-size: 13px;
   }
-  .projects-carousel-btn--prev {
+  .section-carousel-btn--prev {
     left: 2px;
   }
-  .projects-carousel-btn--next {
+  .section-carousel-btn--next {
     right: 2px;
   }
   .section-header {
