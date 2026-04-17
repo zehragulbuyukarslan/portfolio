@@ -622,7 +622,8 @@ section {
   gap: 28px;
 }
 
-#projects-page {
+#projects-page,
+#writing-page {
   padding: 120px 60px 140px;
   max-width: 1280px;
   margin: 0 auto;
@@ -763,6 +764,11 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+}
+
+.articles-grid--page {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
 }
 
 .article-card {
@@ -921,7 +927,8 @@ section {
   #services, #projects, #writing {
     padding: 80px 24px;
   }
-  #projects-page {
+  #projects-page,
+  #writing-page {
     padding: 100px 24px 100px;
   }
   .section-header--projects {

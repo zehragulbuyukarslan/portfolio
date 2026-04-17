@@ -48,14 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
  
-  // ── Active nav link on scroll (home) or current page (projects.html) ──
+  // ── Active nav link on scroll (home) or current page (projects / writing) ──
   const navLinks  = document.querySelectorAll('.menu a');
   const isProjectsPage = /projects\.html$/i.test(window.location.pathname);
+  const isWritingPage = /writing\.html$/i.test(window.location.pathname);
 
   if (isProjectsPage) {
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
       link.classList.toggle('active', href === 'projects.html');
+    });
+  } else if (isWritingPage) {
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === 'writing.html');
     });
   } else {
     const sections = document.querySelectorAll('section[id], footer[id]');
