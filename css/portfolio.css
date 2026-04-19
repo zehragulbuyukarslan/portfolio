@@ -249,6 +249,7 @@ section {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   padding: 12px 28px;
   border: 1px solid var(--border);
   color: var(--text);
@@ -263,6 +264,10 @@ section {
   border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-2px);
+}
+.hero-cta-cv-icon {
+  font-size: 1.2em;
+  line-height: 1;
 }
  
 /* About side */
