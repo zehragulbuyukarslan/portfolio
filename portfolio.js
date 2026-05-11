@@ -248,3 +248,35 @@ document.addEventListener('DOMContentLoaded', () => {
   );
  
 });
+
+// ====== Language-specific CV Download ======
+function updateCVDownloadLink() {
+  const cvBtn = document.getElementById('cv-download-btn');
+  if (!cvBtn) return;
+  
+  const currentLang = window.PortfolioI18n?.getLang?.() || 'en';
+  
+  // Define CV files for each language
+  const cvFiles = {
+    'en': 'assets/cv_en.pdf',
+    'de': 'assets/cv_de.pdf', // Change to 'assets/cv_de.pdf' when you create German CV
+    'tr': 'assets/cv_tr.pdf'
+  };
+  
+  // Define download filenames for each language  
+  const downloadNames = {
+    'en': 'Zehra-Gul-Buyukarslan-CV.pdf',
+    'de': 'Zehra-Gül-Büyükarslan-CV.pdf',
+    'tr': 'Zehra-Gül-Büyükarslan-CV.pdf'
+  };
+  
+  // Update the href and download filename
+  cvBtn.href = cvFiles[currentLang] || cvFiles['en'];
+  cvBtn.download = downloadNames[currentLang] || downloadNames['en'];
+}
+
+// Update CV link when page loads
+document.addEventListener('DOMContentLoaded', updateCVDownloadLink);
+
+// Update CV link when language changes
+window.addEventListener('portfolio:i18n', updateCVDownloadLink);
