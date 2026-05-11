@@ -175,7 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const vc = visibleCount();
       const first = i + 1;
       const last = Math.min(i + vc, items.length);
-      carouselCounter.textContent = vc > 1 ? `${first}–${last} / ${items.length}` : `${first} / ${items.length}`;
+      const fmt = window.PortfolioI18n && typeof window.PortfolioI18n.formatCarouselCounter === 'function'
+        ? window.PortfolioI18n.formatCarouselCounter
+        : null;
+      carouselCounter.textContent = fmt
+        ? fmt(first, last, items.length, vc)
+        : (vc > 1 ? `${first}–${last} / ${items.length}` : `${first} / ${items.length}`);
       carouselPrev.disabled = i <= 0;
       carouselNext.disabled = i >= maxIndex();
     };
@@ -215,6 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         updateChrome();
       });
     });
+
+    window.addEventListener('portfolio:i18n', updateChrome);
 
     setSlideWidths();
     updateChrome();

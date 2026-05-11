@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
  
-<body>
+<body data-page="home">
  
     <div class="noise-overlay"></div>
     <div class="cursor-dot" id="cursorDot"></div>
@@ -21,14 +21,21 @@
  
     <header class="header" id="mainHeader">
         <nav class="menu">
-            <a href="index.html" class="logo" aria-label="Home">ZG</a>
+            <a href="index.html" class="logo" data-i18n-aria-logo aria-label="Home">ZG</a>
+            <div class="menu-right">
             <ul>
-                <li><a href="#hero" data-text="Home">Home</a></li>
-                <li><a href="#services" data-text="Services">Services</a></li>
-                <li><a href="#projects" data-text="Projects">Projects</a></li>
-                <li><a href="writing.html" data-text="Writing">Writing</a></li>
-                <li><a href="#footer" data-text="Contact">Contact</a></li>
+                <li><a href="#hero" data-i18n-nav="nav.home" data-text="Home">Home</a></li>
+                <li><a href="#services" data-i18n-nav="nav.services" data-text="Services">Services</a></li>
+                <li><a href="#projects" data-i18n-nav="nav.projects" data-text="Projects">Projects</a></li>
+                <li><a href="writing.html" data-i18n-nav="nav.writing" data-text="Writing">Writing</a></li>
+                <li><a href="#footer" data-i18n-nav="nav.contact" data-text="Contact">Contact</a></li>
             </ul>
+            <div class="lang-switcher" role="group">
+                <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true"><span data-i18n="lang.en">EN</span></button>
+                <button type="button" class="lang-btn" data-lang="de" aria-pressed="false"><span data-i18n="lang.de">DE</span></button>
+                <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false"><span data-i18n="lang.tr">TR</span></button>
+            </div>
+            </div>
         </nav>
     </header>
     
@@ -45,56 +52,56 @@
                 <article id="hero-profile">
                     <div class="profile-img-wrapper">
                         <div class="profile-ring"></div>
-                        <img src="img/profile.jpg" alt="Profile Picture" class="profile-img">
+                        <img src="img/profile.jpg" alt="Profile Picture" class="profile-img" data-i18n-alt="hero.profile_alt">
                     </div>
                     <div class="hero-profile-text">
-                        <p class="hero-label">Software Developer & Designer</p>
+                        <p class="hero-label" data-i18n="hero.label">Software Developer & Designer</p>
                         <h1 class="name">Zehra Gül<br><span>Büyükarslan</span></h1>
-                        <h2 class="motto">Contribute to Solving Real-World Problems Through Software</h2>
+                        <h2 class="motto" data-i18n="hero.motto">Contribute to Solving Real-World Problems Through Software</h2>
                         <div class="hero-cta">
-                            <a href="#projects" class="btn-primary">View Work</a>
-                            <a href="assets/cv.pdf" class="btn-secondary" download="Zehra-Gul-Buyukarslan-CV.pdf" aria-label="Download CV as PDF">
+                            <a href="#projects" class="btn-primary" data-i18n="hero.cta_work">View Work</a>
+                            <a href="assets/cv.pdf" class="btn-secondary" download="Zehra-Gul-Buyukarslan-CV.pdf" data-i18n-aria-label="hero.cta_cv_aria" aria-label="Download CV as PDF">
                                 <i class="fa-solid fa-file-arrow-down hero-cta-cv-icon" aria-hidden="true"></i>
-                                Download CV
+                                <span data-i18n="hero.cta_cv">Download CV</span>
                             </a>
-                            <a href="#footer" class="btn-secondary">Get in Touch</a>
+                            <a href="#footer" class="btn-secondary" data-i18n="hero.cta_touch">Get in Touch</a>
                         </div>
                     </div>
                 </article>
  
                 <article id="hero-about" class="about">
-                    <div class="about-tag">About Me</div>
-                    <h2>Hi, I'm Zehra!</h2>
-                    <p>
+                    <div class="about-tag" data-i18n="about.tag">About Me</div>
+                    <h2 data-i18n="about.title">Hi, I'm Zehra!</h2>
+                    <p data-i18n="about.body">
                         3rd-year Computer Engineering student @ Karabük University. Specializing in AI Native Applications and Web Development with a focus on creating a tangible positive impact. Constantly evolving, one line of code at a time.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-num">6+</span>
-                            <span class="stat-label">Projects</span>
+                            <span class="stat-label" data-i18n="about.stat_projects">Projects</span>
                         </div>
                         <div class="stat">
                             <span class="stat-num">4</span>
-                            <span class="stat-label">Services</span>
+                            <span class="stat-label" data-i18n="about.stat_services">Services</span>
                         </div>
                         <div class="stat">
                             <span class="stat-num">∞</span>
-                            <span class="stat-label">Curiosity</span>
+                            <span class="stat-label" data-i18n="about.stat_curiosity">Curiosity</span>
                         </div>
                     </div>
                 </article>
             </div>
  
             <div class="scroll-indicator">
-                <span>Scroll</span>
+                <span data-i18n="scroll">Scroll</span>
                 <div class="scroll-line"></div>
             </div>
         </section>
  
         <section id="services">
             <div class="section-header">
-                <span class="section-tag">What I Do</span>
-                <h1>My Services</h1>
+                <span class="section-tag" data-i18n="services.tag">What I Do</span>
+                <h1 data-i18n="services.title">My Services</h1>
             </div>
             
             <article class="cards">
@@ -102,32 +109,32 @@
                     <div class="card-icon-wrap">
                         <i class="fa-solid fa-code"></i>
                     </div>
-                    <h2>Web Development</h2>
-                    <p>Building modern, responsive websites and web applications from scratch.</p>
+                    <h2 data-i18n="services.web_title">Web Development</h2>
+                    <p data-i18n="services.web_desc">Building modern, responsive websites and web applications from scratch.</p>
                     <div class="card-number">01</div>
                 </div>
                 <div class="service-card" style="--card-delay: 0.1s">
                     <div class="card-icon-wrap">
                         <i class="fa-solid fa-robot"></i>
                     </div>
-                    <h2>Artificial Intelligence</h2>
-                    <p>Developing AI-powered solutions and integrating intelligent features.</p>
+                    <h2 data-i18n="services.ai_title">Artificial Intelligence</h2>
+                    <p data-i18n="services.ai_desc">Developing AI-powered solutions and integrating intelligent features.</p>
                     <div class="card-number">02</div>
                 </div>
                 <div class="service-card" style="--card-delay: 0.2s">
                     <div class="card-icon-wrap">
                         <i class="fa-solid fa-file-video"></i>
                     </div>
-                    <h2>Video Editing</h2>
-                    <p>Creating polished, engaging video content for various platforms.</p>
+                    <h2 data-i18n="services.video_title">Video Editing</h2>
+                    <p data-i18n="services.video_desc">Creating polished, engaging video content for various platforms.</p>
                     <div class="card-number">03</div>
                 </div>
                 <div class="service-card" style="--card-delay: 0.3s">
                     <div class="card-icon-wrap">
                         <i class="fa-solid fa-palette"></i>
                     </div>
-                    <h2>Graphic Design</h2>
-                    <p>Crafting visual identities and designs that communicate effectively.</p>
+                    <h2 data-i18n="services.design_title">Graphic Design</h2>
+                    <p data-i18n="services.design_desc">Crafting visual identities and designs that communicate effectively.</p>
                     <div class="card-number">04</div>
                 </div>
             </article>
@@ -136,54 +143,54 @@
         <section id="projects" class="projects">
             <div class="section-header section-header--projects">
                 <div class="section-header-text">
-                    <span class="section-tag">Portfolio</span>
-                    <h1>Projects &amp; Experience</h1>
+                    <span class="section-tag" data-i18n="projects_section.tag">Portfolio</span>
+                    <h1 data-i18n="projects_section.title">Projects &amp; Experience</h1>
                 </div>
-                <a href="projects.html" class="btn-view-all">View all</a>
+                <a href="projects.html" class="btn-view-all" data-i18n="projects_section.view_all">View all</a>
             </div>
  
             <div class="section-carousel" id="carousel-projects">
-                <button type="button" class="section-carousel-btn section-carousel-btn--prev" id="carousel-projects-prev" aria-label="Previous project">
+                <button type="button" class="section-carousel-btn section-carousel-btn--prev" id="carousel-projects-prev" data-i18n-aria-label="projects_section.prev" aria-label="Previous project">
                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
-                <div class="section-carousel-viewport" id="carousel-projects-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Projects and experience">
+                <div class="section-carousel-viewport" id="carousel-projects-viewport" tabindex="0" role="region" aria-roledescription="carousel" data-i18n-aria-label="projects_section.carousel_region" aria-label="Projects and experience">
                     <div class="section-carousel-track" id="carousel-projects-track">
                 <article class="project-item" style="--item-delay: 0s">
                     <div class="project-img-wrap">
-                        <img src="img/del-mails.png" alt="Email Filtering System">
+                        <img src="img/del-mails.png" alt="Email Filtering System" data-i18n-alt="projects.email_alt">
                         <div class="project-overlay">
                             <span class="project-tag">Python · GitHub Actions</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Autonomous Email Filtering System</h3>
-                        <p>A Python program that automatically deletes unwanted emails using IMAP protocol. Fully autonomous via GitHub Actions and YAML — runs every morning at 10:00 AM Turkish time.</p>
+                        <h3 data-i18n="projects.email_title">Autonomous Email Filtering System</h3>
+                        <p data-i18n="projects.email_desc">A Python program that automatically deletes unwanted emails using IMAP protocol. Fully autonomous via GitHub Actions and YAML — runs every morning at 10:00 AM Turkish time.</p>
                     </div>
                 </article>
  
                 <article class="project-item" style="--item-delay: 0.15s">
                     <div class="project-img-wrap">
-                        <img src="img/nesne-tespit-takip-sema.png" alt="AUV Development">
+                        <img src="img/nesne-tespit-takip-sema.png" alt="AUV Development" data-i18n-alt="projects.auv_alt">
                         <div class="project-overlay">
                             <span class="project-tag">Python · C++ · ROS · OpenCV</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Autonomous Underwater Vehicle</h3>
-                        <p>Contributed to DDD organization's AUV — motion control, mission automation, and computer vision using Pixhawk, PyMAVLink, ROS, and PID-based control algorithms.</p>
+                        <h3 data-i18n="projects.auv_title">Autonomous Underwater Vehicle</h3>
+                        <p data-i18n="projects.auv_desc">Contributed to DDD organization's AUV — motion control, mission automation, and computer vision using Pixhawk, PyMAVLink, ROS, and PID-based control algorithms.</p>
                     </div>
                 </article>
  
                 <article class="project-item" style="--item-delay: 0.3s">
                     <div class="project-img-wrap">
-                        <img src="img/chatbot.jpg" alt="Chatbot Development">
+                        <img src="img/chatbot.jpg" alt="Chatbot Development" data-i18n-alt="projects.chatbot_alt">
                         <div class="project-overlay">
                             <span class="project-tag">AI · NLP · Data Collection</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>University Chatbot</h3>
-                        <p>Volunteered at the IT Department to develop an AI-powered chatbot for the university website — collected datasets, handled data cleaning, and designed user scenarios. Developing RAG integration to keep answers aligned with up-to-date information.</p>
+                        <h3 data-i18n="projects.chatbot_title">University Chatbot</h3>
+                        <p data-i18n="projects.chatbot_desc">Volunteered at the IT Department to develop an AI-powered chatbot for the university website — collected datasets, handled data cleaning, and designed user scenarios. Developing RAG integration to keep answers aligned with up-to-date information.</p>
                     </div>
                 </article>
 
@@ -195,8 +202,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Prompt Engineer Intern — M8D6</h3>
-                        <p>Researched, designed, and tested prompt techniques to improve large language model performance for M8D6 products. Focus on business intelligence, automation, and customer interaction — including the Smart Dispatch system for the U.S. home services sector.</p>
+                        <h3 data-i18n="projects.m8d6_title">Prompt Engineer Intern — M8D6</h3>
+                        <p data-i18n="projects.m8d6_desc">Researched, designed, and tested prompt techniques to improve large language model performance for M8D6 products. Focus on business intelligence, automation, and customer interaction — including the Smart Dispatch system for the U.S. home services sector.</p>
                     </div>
                 </article>
 
@@ -208,26 +215,26 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Sosyalfest Ideathon — 2nd Place (InoGen)</h3>
-                        <p>Helped design the InoGen platform vision: workshops and collaborations to grow young people’s creative thinking, problem-solving, and business skills. Used AI tools to produce visuals and presentation materials for the team.</p>
+                        <h3 data-i18n="projects.ideathon_title">Sosyalfest Ideathon — 2nd Place (InoGen)</h3>
+                        <p data-i18n="projects.ideathon_desc">Helped design the InoGen platform vision: workshops and collaborations to grow young people’s creative thinking, problem-solving, and business skills. Used AI tools to produce visuals and presentation materials for the team.</p>
                     </div>
                 </article>
 
                 <article class="project-item" style="--item-delay: 0.75s">
                     <div class="project-img-wrap">
-                        <img src="img/arbifi.png" alt="ArbiFi dispute portal UI">
+                        <img src="img/arbifi.png" alt="ArbiFi dispute portal UI" data-i18n-alt="projects.arbifi_alt">
                         <div class="project-overlay">
                             <span class="project-tag">Next.js · TypeScript · Solana · Prisma</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>ArbiFi — AI Dispute Resolution on Solana</h3>
-                        <p>For freelance work, DAOs, and digital transactions, dispute resolution is often slow and depends on central authority. ArbiFi lets both parties present evidence; an AI analyzes the case and produces a clear, human-readable decision. Architecture secures final outcomes on-chain on Solana for transparency and trustless execution. Stack: Next.js and Tailwind CSS (frontend), TypeScript and Next.js API Routes (backend), Prisma and SQL (database).</p>
+                        <h3 data-i18n="projects.arbifi_title">ArbiFi — AI Dispute Resolution on Solana</h3>
+                        <p data-i18n="projects.arbifi_desc">For freelance work, DAOs, and digital transactions, dispute resolution is often slow and depends on central authority. ArbiFi lets both parties present evidence; an AI analyzes the case and produces a clear, human-readable decision. Architecture secures final outcomes on-chain on Solana for transparency and trustless execution. Stack: Next.js and Tailwind CSS (frontend), TypeScript and Next.js API Routes (backend), Prisma and SQL (database).</p>
                     </div>
                 </article>
                     </div>
                 </div>
-                <button type="button" class="section-carousel-btn section-carousel-btn--next" id="carousel-projects-next" aria-label="Next project">
+                <button type="button" class="section-carousel-btn section-carousel-btn--next" id="carousel-projects-next" data-i18n-aria-label="projects_section.next" aria-label="Next project">
                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -237,101 +244,101 @@
         <section id="writing" class="writing">
             <div class="section-header section-header--projects">
                 <div class="section-header-text">
-                    <span class="section-tag">Medium</span>
-                    <h1>Writing</h1>
+                    <span class="section-tag" data-i18n="writing_section.tag">Medium</span>
+                    <h1 data-i18n="writing_section.title">Writing</h1>
                 </div>
-                <a href="writing.html" class="btn-view-all">View all</a>
+                <a href="writing.html" class="btn-view-all" data-i18n="writing_section.view_all">View all</a>
             </div>
 
             <div class="section-carousel" id="carousel-writing">
-                <button type="button" class="section-carousel-btn section-carousel-btn--prev" id="carousel-writing-prev" aria-label="Previous article">
+                <button type="button" class="section-carousel-btn section-carousel-btn--prev" id="carousel-writing-prev" data-i18n-aria-label="writing_section.prev" aria-label="Previous article">
                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
-                <div class="section-carousel-viewport" id="carousel-writing-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Writing articles">
+                <div class="section-carousel-viewport" id="carousel-writing-viewport" tabindex="0" role="region" aria-roledescription="carousel" data-i18n-aria-label="writing_section.carousel_region" aria-label="Writing articles">
                     <div class="section-carousel-track" id="carousel-writing-track">
-                        <a href="https://medium.com/armut-freelance-platformu-mu-teklif-%C3%BCcreti-makinesi-mi-0d3c0f93ff15" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0s" aria-label="Read Armut: Freelance Platform mu, Ücretli Teklif Makinesi mi? on Medium">
+                        <a href="https://medium.com/armut-freelance-platformu-mu-teklif-%C3%BCcreti-makinesi-mi-0d3c0f93ff15" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>Armut: Freelance Platform mu, Ücretli Teklif Makinesi mi?</h3>
                                 <p>Armut’ta para verip ses alamamak — platform deneyimi üzerine gözlemler.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
         
-                        <a href="https://medium.com/i%CC%87stem-m%C3%BChendisli%C4%9Fi-3-18f45d0db307" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.05s" aria-label="Read İstem Mühendisliği - 3 on Medium">
+                        <a href="https://medium.com/i%CC%87stem-m%C3%BChendisli%C4%9Fi-3-18f45d0db307" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.05s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>İstem Mühendisliği - 3</h3>
                                 <p>İyi bir istem için fazladan ipuçları.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
         
-                        <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-2-4a8fa941fb40" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.1s" aria-label="Read İstem Mühendisliği - 2 on Medium">
+                        <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-2-4a8fa941fb40" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.1s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>İstem Mühendisliği - 2</h3>
                                 <p>İstem mühendisliği serisi — roller ve üslup.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
         
-                        <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-1-007c1fee99d7" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.15s" aria-label="Read İstem Mühendisliği - 1 on Medium">
+                        <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-1-007c1fee99d7" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.15s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>İstem Mühendisliği - 1</h3>
                                 <p>İstem mühendisliğine giriş — net ve betimleyici istemler.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
         
-                        <a href="https://medium.com/kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma-react-ve-di%C4%9Fer-teknikler-f74b7c815849" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.2s" aria-label="Read Karşılaştırma: ReAct ve Diğer Teknikler on Medium">
+                        <a href="https://medium.com/kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma-react-ve-di%C4%9Fer-teknikler-f74b7c815849" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.2s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>Karşılaştırma: ReAct ve Diğer Teknikler</h3>
                                 <p>ReAct, CoT ve benzeri yaklaşımların karşılaştırması.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
         
-                        <a href="https://medium.com/reacte-giri%C5%9F-b2597331e37f" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.25s" aria-label="Read İstem Mühendisliği: ReAct on Medium">
+                        <a href="https://medium.com/reacte-giri%C5%9F-b2597331e37f" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.25s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>İstem Mühendisliği: ReAct</h3>
                                 <p>ReAct’e giriş — düşünme ve eylem döngüsü.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
         
-                        <a href="https://medium.com/raga-giri%C5%9F-9a15eaa7dc10" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.3s" aria-label="Read İstem Mühendisliği: RAG on Medium">
+                        <a href="https://medium.com/raga-giri%C5%9F-9a15eaa7dc10" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.3s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                             <div class="article-card-icon" aria-hidden="true">
                                 <i class="fab fa-medium"></i>
                             </div>
                             <div class="article-card-content">
                                 <h3>İstem Mühendisliği: RAG</h3>
                                 <p>RAG nedir? — bilgi getirme ve üretimi birleştirmek.</p>
-                                <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                                <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                             </div>
                         </a>
                     </div>
                 </div>
-                <button type="button" class="section-carousel-btn section-carousel-btn--next" id="carousel-writing-next" aria-label="Next article">
+                <button type="button" class="section-carousel-btn section-carousel-btn--next" id="carousel-writing-next" data-i18n-aria-label="writing_section.next" aria-label="Next article">
                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
-            <p class="section-carousel-meta"><span id="carousel-writing-counter">1 / 4</span></p>
+            <p class="section-carousel-meta"><span id="carousel-writing-counter">1 / 7</span></p>
 
         </section>
     
@@ -340,27 +347,27 @@
      <footer class="footer" id="footer">
       <div class="footer-container">
         <div class="footer-top-text">
-            <span class="footer-eyebrow">Let's work together</span>
-            <h2 class="footer-heading">Get In Touch</h2>
+            <span class="footer-eyebrow" data-i18n="footer.eyebrow">Let's work together</span>
+            <h2 class="footer-heading" data-i18n="footer.heading">Get In Touch</h2>
         </div>
  
         <div class="footer-content">
           <div class="footer-section contact-section">
-            <h3 class="footer-title">Contact</h3>
+            <h3 class="footer-title" data-i18n="footer.contact">Contact</h3>
             <div class="contact-info">
               <div class="info-item">
-                <span class="label">Email</span>
+                <span class="label" data-i18n="footer.email">Email</span>
                 <a href="mailto:zgbarslan@gmail.com">zgbarslan@gmail.com</a>
               </div>
               <div class="info-item">
-                <span class="label">Location</span>
-                <p>İstanbul, Turkey</p>
+                <span class="label" data-i18n="footer.location">Location</span>
+                <p data-i18n="footer.location_value">İstanbul, Turkey</p>
               </div>
             </div>
           </div>
  
           <div class="footer-section connect-section">
-            <h3 class="footer-title">Connect</h3>
+            <h3 class="footer-title" data-i18n="footer.connect">Connect</h3>
             <div class="social-links">
               <a href="https://github.com/zehragulbuyukarslan" class="social-link" aria-label="GitHub">
                 <i class="fab fa-github"></i>
@@ -385,11 +392,12 @@
         <div class="footer-divider"></div>
  
         <div class="footer-bottom">
-          <p>&copy; 2026 Zehra Gül Büyükarslan. All rights reserved.</p>
+          <p data-i18n="footer.rights">&copy; 2026 Zehra Gül Büyükarslan. All rights reserved.</p>
         </div>
       </div>
     </footer>
  
+    <script src="i18n.js"></script>
     <script src="portfolio.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-<body>
+<body data-page="writing">
 
     <div class="noise-overlay"></div>
     <div class="cursor-dot" id="cursorDot"></div>
@@ -21,112 +21,119 @@
 
     <header class="header" id="mainHeader">
         <nav class="menu">
-            <a href="index.html" class="logo" aria-label="Home">ZG</a>
+            <a href="index.html" class="logo" data-i18n-aria-logo aria-label="Home">ZG</a>
+            <div class="menu-right">
             <ul>
-                <li><a href="index.html#hero" data-text="Home">Home</a></li>
-                <li><a href="index.html#services" data-text="Services">Services</a></li>
-                <li><a href="projects.html" data-text="Projects">Projects</a></li>
-                <li><a href="writing.html" data-text="Writing">Writing</a></li>
-                <li><a href="index.html#footer" data-text="Contact">Contact</a></li>
+                <li><a href="index.html#hero" data-i18n-nav="nav.home" data-text="Home">Home</a></li>
+                <li><a href="index.html#services" data-i18n-nav="nav.services" data-text="Services">Services</a></li>
+                <li><a href="projects.html" data-i18n-nav="nav.projects" data-text="Projects">Projects</a></li>
+                <li><a href="writing.html" data-i18n-nav="nav.writing" data-text="Writing">Writing</a></li>
+                <li><a href="index.html#footer" data-i18n-nav="nav.contact" data-text="Contact">Contact</a></li>
             </ul>
+            <div class="lang-switcher" role="group">
+                <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true"><span data-i18n="lang.en">EN</span></button>
+                <button type="button" class="lang-btn" data-lang="de" aria-pressed="false"><span data-i18n="lang.de">DE</span></button>
+                <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false"><span data-i18n="lang.tr">TR</span></button>
+            </div>
+            </div>
         </nav>
     </header>
 
     <main class="main">
 
         <section id="writing-page" class="writing">
-            <a href="index.html#writing" class="projects-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to home</a>
+            <a href="index.html#writing" class="projects-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> <span data-i18n="writing_page.back">Back to home</span></a>
 
             <div class="section-header">
-                <span class="section-tag">Medium</span>
-                <h1>Writing</h1>
+                <span class="section-tag" data-i18n="writing_page.tag">Medium</span>
+                <h1 data-i18n="writing_page.title">Writing</h1>
             </div>
 
             <div class="projects-page-intro">
-                <p>Articles on prompt engineering, AI techniques, and tech — published on Medium.</p>
+                <p data-i18n="writing_page.intro">Articles on prompt engineering, AI techniques, and tech — published on Medium.</p>
             </div>
 
             <div class="articles-grid articles-grid--page">
-                <a href="https://medium.com/armut-freelance-platformu-mu-teklif-%C3%BCcreti-makinesi-mi-0d3c0f93ff15" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0s" aria-label="Read Armut: Freelance Platform mu, Ücretli Teklif Makinesi mi? on Medium">
+                <a href="https://medium.com/armut-freelance-platformu-mu-teklif-%C3%BCcreti-makinesi-mi-0d3c0f93ff15" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>Armut: Freelance Platform mu, Ücretli Teklif Makinesi mi?</h3>
                         <p>Armut’ta para verip ses alamamak — platform deneyimi üzerine gözlemler.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
 
-                <a href="https://medium.com/i%CC%87stem-m%C3%BChendisli%C4%9Fi-3-18f45d0db307" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.05s" aria-label="Read İstem Mühendisliği - 3 on Medium">
+                <a href="https://medium.com/i%CC%87stem-m%C3%BChendisli%C4%9Fi-3-18f45d0db307" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.05s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>İstem Mühendisliği - 3</h3>
                         <p>İyi bir istem için fazladan ipuçları.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
 
-                <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-2-4a8fa941fb40" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.1s" aria-label="Read İstem Mühendisliği - 2 on Medium">
+                <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-2-4a8fa941fb40" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.1s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>İstem Mühendisliği - 2</h3>
                         <p>İstem mühendisliği serisi — roller ve üslup.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
 
-                <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-1-007c1fee99d7" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.15s" aria-label="Read İstem Mühendisliği - 1 on Medium">
+                <a href="https://medium.com/prompt-m%C3%BChendisli%C4%9Fi-1-007c1fee99d7" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.15s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>İstem Mühendisliği - 1</h3>
                         <p>İstem mühendisliğine giriş — net ve betimleyici istemler.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
 
-                <a href="https://medium.com/kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma-react-ve-di%C4%9Fer-teknikler-f74b7c815849" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.2s" aria-label="Read Karşılaştırma: ReAct ve Diğer Teknikler on Medium">
+                <a href="https://medium.com/kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma-react-ve-di%C4%9Fer-teknikler-f74b7c815849" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.2s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>Karşılaştırma: ReAct ve Diğer Teknikler</h3>
                         <p>ReAct, CoT ve benzeri yaklaşımların karşılaştırması.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
 
-                <a href="https://medium.com/reacte-giri%C5%9F-b2597331e37f" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.25s" aria-label="Read İstem Mühendisliği: ReAct on Medium">
+                <a href="https://medium.com/reacte-giri%C5%9F-b2597331e37f" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.25s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>İstem Mühendisliği: ReAct</h3>
                         <p>ReAct’e giriş — düşünme ve eylem döngüsü.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
 
-                <a href="https://medium.com/raga-giri%C5%9F-9a15eaa7dc10" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.3s" aria-label="Read İstem Mühendisliği: RAG on Medium">
+                <a href="https://medium.com/raga-giri%C5%9F-9a15eaa7dc10" class="article-card" target="_blank" rel="noopener noreferrer" style="--item-delay: 0.3s" data-i18n-aria-label="writing_section.read_aria" aria-label="Read article on Medium">
                     <div class="article-card-icon" aria-hidden="true">
                         <i class="fab fa-medium"></i>
                     </div>
                     <div class="article-card-content">
                         <h3>İstem Mühendisliği: RAG</h3>
                         <p>RAG nedir? — bilgi getirme ve üretimi birleştirmek.</p>
-                        <span class="article-card-cta">Read on Medium <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
+                        <span class="article-card-cta"><span data-i18n="writing_section.read_medium">Read on Medium</span> <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></span>
                     </div>
                 </a>
             </div>
 
             <p class="writing-footer-note">
-                <a href="https://medium.com/@zehragulbuyukarslan" target="_blank" rel="noopener noreferrer">Profile on Medium</a>
+                <a href="https://medium.com/@zehragulbuyukarslan" target="_blank" rel="noopener noreferrer" data-i18n="writing_page.profile_link">Profile on Medium</a>
             </p>
         </section>
 
@@ -135,27 +142,27 @@
     <footer class="footer" id="footer">
       <div class="footer-container">
         <div class="footer-top-text">
-            <span class="footer-eyebrow">Let's work together</span>
-            <h2 class="footer-heading">Get In Touch</h2>
+            <span class="footer-eyebrow" data-i18n="footer.eyebrow">Let's work together</span>
+            <h2 class="footer-heading" data-i18n="footer.heading">Get In Touch</h2>
         </div>
 
         <div class="footer-content">
           <div class="footer-section contact-section">
-            <h3 class="footer-title">Contact</h3>
+            <h3 class="footer-title" data-i18n="footer.contact">Contact</h3>
             <div class="contact-info">
               <div class="info-item">
-                <span class="label">Email</span>
+                <span class="label" data-i18n="footer.email">Email</span>
                 <a href="mailto:zgbarslan@gmail.com">zgbarslan@gmail.com</a>
               </div>
               <div class="info-item">
-                <span class="label">Location</span>
-                <p>İstanbul, Turkey</p>
+                <span class="label" data-i18n="footer.location">Location</span>
+                <p data-i18n="footer.location_value">İstanbul, Turkey</p>
               </div>
             </div>
           </div>
 
           <div class="footer-section connect-section">
-            <h3 class="footer-title">Connect</h3>
+            <h3 class="footer-title" data-i18n="footer.connect">Connect</h3>
             <div class="social-links">
               <a href="https://github.com/zehragulbuyukarslan" class="social-link" aria-label="GitHub">
                 <i class="fab fa-github"></i>
@@ -180,11 +187,12 @@
         <div class="footer-divider"></div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Zehra Gül Büyükarslan. All rights reserved.</p>
+          <p data-i18n="footer.rights">&copy; 2026 Zehra Gül Büyükarslan. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="portfolio.js"></script>
 </body>
 </html>
