@@ -3,7 +3,7 @@
 .footer {
   background: linear-gradient(180deg, #2d0a1f 0%, #1a0612 100%);
   color: #fff4fa;
-  padding: 80px 60px 40px;
+  padding: 60px 60px 28px;
   position: relative;
   overflow: hidden;
 }
@@ -53,7 +53,7 @@
 }
 .footer-heading {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(42px, 6vw, 72px);
+  font-size: clamp(35px, 5vw, 60px);
   font-weight: 300;
   font-style: italic;
   color: #fff4fa;
@@ -119,8 +119,8 @@
  
 /* Social links */
 .social-links {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
  
@@ -133,12 +133,9 @@
   font-size: 13px;
   font-family: 'DM Sans', sans-serif;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 209, 232, 0.08);
   transition: color 0.3s, padding-left 0.3s;
 }
-.social-link:last-child {
-  border-bottom: none;
-}
+
 .social-link i {
   font-size: 16px;
   width: 20px;

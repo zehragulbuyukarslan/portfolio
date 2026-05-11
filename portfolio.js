@@ -195,7 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollEndTimer = setTimeout(updateChrome, 150);
     }, { passive: true });
 
+    // Shift + wheel: horizontal carousel. Plain vertical wheel scrolls the page
+    // (mapping deltaY to scrollLeft + preventDefault blocked page scroll over slides).
     carouselViewport.addEventListener('wheel', (e) => {
+      if (!e.shiftKey) return;
       if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
       e.preventDefault();
       carouselViewport.scrollLeft += e.deltaY;

@@ -1,22 +1,32 @@
 
-
-Copy
-
 /* ── HEADER ── */
-header {
+#mainHeader {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 5000;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 10, 31, 0.78) 0%,
+    rgba(26, 6, 18, 0.82) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 rgba(255, 209, 232, 0.08);
   transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
 }
- 
-header.scrolled {
-  background: rgba(45, 10, 31, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(255, 209, 232, 0.08);
+
+#mainHeader.scrolled {
+  background: linear-gradient(
+    180deg,
+    rgba(45, 10, 31, 0.92) 0%,
+    rgba(26, 6, 18, 0.94) 100%
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 1px 0 rgba(255, 209, 232, 0.1), 0 8px 32px rgba(0, 0, 0, 0.2);
 }
  
 .menu {
