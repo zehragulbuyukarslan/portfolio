@@ -1,0 +1,531 @@
+/* =============================================
+   SECTIONS.CSS — deneyim, sertifika, yetenek bölümleri
+   ve render katmanının eklediği küçük parçalar
+   ============================================= */
+
+/* ── Yeni bölümlerin kapsayıcıları (portfolio.css'teki #services ile aynı ölçü) ── */
+#experience,
+#certificates,
+#skills {
+  padding: 120px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  align-self: center;
+}
+
+/* ── Görünüme girince beliren öğeler ── */
+.will-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.will-reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .will-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── Etiket çipleri ── */
+.chip {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 209, 232, 0.06);
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ──────────────────────────
+   DENEYİM
+────────────────────────── */
+.timeline-columns {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 20px;
+  padding: 26px 26px 26px 0;
+  border-bottom: 1px solid var(--border);
+}
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-marker {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 209, 232, 0.07);
+  color: var(--accent);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.timeline-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.timeline-head h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.timeline-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--bg-dark);
+  background: var(--accent);
+}
+
+.timeline-org {
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.85;
+  margin-bottom: 2px;
+}
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.timeline-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline-side-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.timeline-side-title + .timeline {
+  margin-bottom: 40px;
+}
+
+.timeline--compact .timeline-item {
+  padding: 18px 0;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+}
+.timeline--compact .timeline-marker {
+  width: 36px;
+  height: 36px;
+  font-size: 13px;
+}
+.timeline--compact .timeline-head h3 {
+  font-size: 17px;
+}
+.timeline--compact .timeline-period {
+  margin-bottom: 0;
+}
+
+/* ──────────────────────────
+   SERTİFİKALAR
+────────────────────────── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cert-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 100%;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card-bg);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s, border-color 0.35s, background 0.35s;
+}
+.cert-card--linked:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 209, 232, 0.35);
+  background: rgba(255, 244, 250, 0.09);
+}
+
+.cert-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 209, 232, 0.1);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.cert-body {
+  flex: 1;
+  min-width: 0;
+}
+.cert-body h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.cert-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.cert-cta {
+  color: var(--text-muted);
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: color 0.3s;
+}
+.cert-card--linked:hover .cert-cta {
+  color: var(--accent);
+}
+
+.cert-extras {
+  display: flex;
+  gap: 10px;
+  padding-left: 24px;
+}
+.cert-extra {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.3s, border-color 0.3s;
+}
+.cert-extra:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ──────────────────────────
+   YETENEKLER
+────────────────────────── */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.skill-group h3 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.spoken-languages {
+  padding: 28px 26px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card-bg);
+}
+.spoken-languages h3 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.spoken-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.spoken-item:last-child {
+  border-bottom: none;
+}
+.spoken-name {
+  font-size: 14px;
+  color: var(--text);
+}
+.spoken-level {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* ──────────────────────────
+   PROJE KARTI EKLERİ
+────────────────────────── */
+.project-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.project-title-row h3 {
+  margin-bottom: 0;
+}
+.project-year {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.project-context {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 209, 232, 0.06);
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+.project-link:hover {
+  color: var(--text);
+  border-color: rgba(255, 209, 232, 0.35);
+  background: rgba(255, 209, 232, 0.12);
+}
+.project-link i {
+  font-size: 11px;
+}
+
+/* ── CV butonundaki dil rozeti ── */
+.cv-lang-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 2px 6px;
+  margin-left: 2px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* ── Türkçe yazı rozeti ── */
+.article-lang {
+  display: inline-block;
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 8px;
+  vertical-align: middle;
+}
+
+/* ── Yazılar sayfası ızgarası ── */
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* ──────────────────────────
+   MOBİL MENÜ
+────────────────────────── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 209, 232, 0.06);
+  cursor: none;
+}
+.nav-toggle span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--accent);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle[aria-expanded='true'] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .menu {
+    flex-wrap: wrap;
+  }
+  .menu-right {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 8px 0 22px;
+  }
+  .menu-right.is-open {
+    display: flex;
+  }
+  .menu ul {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .menu a {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .lang-switcher {
+    align-self: flex-start;
+  }
+}
+
+/* ──────────────────────────
+   DUYARLI DÜZEN
+────────────────────────── */
+@media (max-width: 1024px) {
+  .timeline-columns,
+  .skills-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  #experience,
+  #certificates,
+  #skills {
+    padding: 80px 24px;
+  }
+  .cert-card {
+    padding: 20px;
+    gap: 14px;
+  }
+  .timeline-item {
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+  }
+  .timeline-marker {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+  .project-title-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

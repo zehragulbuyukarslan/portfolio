@@ -386,7 +386,8 @@ section {
   padding: 5px 14px;
   border-radius: 999px;
 }
-.section-header h1 {
+.section-header h1,
+.section-header h2 {
   font-family: var(--font-display);
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 300;
@@ -408,7 +409,8 @@ section {
   align-items: flex-start;
   gap: 14px;
 }
-.section-header--projects .section-header-text h1 {
+.section-header--projects .section-header-text h1,
+.section-header--projects .section-header-text h2 {
   text-align: left;
 }
 .btn-view-all {
@@ -496,7 +498,7 @@ section {
   color: var(--accent);
 }
  
-.service-card h2 {
+.service-card h3 {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 400;
@@ -629,7 +631,8 @@ section {
 }
 
 #projects-page,
-#writing-page {
+#writing-page,
+#certificates-page {
   padding: 120px 60px 140px;
   max-width: 1280px;
   margin: 0 auto;
@@ -930,11 +933,12 @@ section {
   .hero-inner {
     padding: 90px 24px 60px;
   }
-  #services, #projects, #writing {
+  #services, #projects, #writing, #experience, #certificates, #skills {
     padding: 80px 24px;
   }
   #projects-page,
-  #writing-page {
+  #writing-page,
+  #certificates-page {
     padding: 100px 24px 100px;
   }
   .section-header--projects {
