@@ -111,7 +111,14 @@
  
 .info-item a {
   text-decoration: none;
-  transition: color 0.3s;
+  color: #fff4fa;
+  transition: color 0.3s, text-decoration 0.2s;
+  outline: none;
+  cursor: pointer;
+  &:focus, &:active {
+    text-decoration: underline;
+    color: #ffd1e8;
+  }
 }
 .info-item a:hover {
   color: #ffd1e8;
@@ -125,15 +132,32 @@
 }
  
 .social-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 14px;
-  color: rgba(255, 244, 250, 0.6);
+  gap: 10px;
+  color: rgba(255, 244, 250, 0.7);
   text-decoration: none;
-  font-size: 13px;
-  font-family: 'DM Sans', sans-serif;
-  padding: 10px 0;
-  transition: color 0.3s, padding-left 0.3s;
+  font-size: 14px;
+  font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 
+    color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s,
+    padding-left 0.25s;
+  outline: none;
+}
+.social-link:focus, .social-link:active {
+  color: #ffd1e8;
+  background: rgba(255, 209, 232, 0.05);
+  box-shadow: 0 0 0 2px rgba(255, 209, 232, 0.4);
+}
+
+.social-link:hover {
+  color: #fff4fa;
+  background: rgba(255, 209, 232, 0.07);
+  padding-left: 9px;
 }
 
 .social-link i {
