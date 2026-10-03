@@ -55,7 +55,7 @@
         <nav class="menu">
           <a href="index.html" class="logo" aria-label="${esc(t('nav.logo_aria'))}">${esc(D.profile.initials)}</a>
           <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="${esc(
-            t('nav.home')
+            t('nav.menu_toggle')
           )}">
             <span></span><span></span><span></span>
           </button>

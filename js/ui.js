@@ -53,6 +53,7 @@
 
   /* ── Mobil menü ────────────────────────────────────────────── */
   function initNavToggle() {
+    const header = document.getElementById('mainHeader');
     const toggle = document.getElementById('navToggle');
     const panel = document.getElementById('navPanel');
     if (!toggle || !panel) return;
@@ -62,13 +63,19 @@
       toggle.setAttribute('aria-expanded', 'false');
     };
 
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = panel.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
     });
     panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') close();
+    });
+    document.addEventListener('click', (e) => {
+      if (!panel.classList.contains('is-open')) return;
+      if (header && header.contains(e.target)) return;
+      close();
     });
   }
 
